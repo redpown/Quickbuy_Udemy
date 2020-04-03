@@ -7,8 +7,12 @@ using System.Text;
 
 namespace Quickbuy_Udemy.Repositorio.Contexto
 {
-    class QuickyBuy_Udemy_DB_Entity:DbContext
+    public class QuickyBuy_Udemy_DB_Entity:DbContext
     {
+        public QuickyBuy_Udemy_DB_Entity(DbContextOptions options) : base(options)
+        {
+        }
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
