@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Quickbuy_Udemy.Dominio.Entity
 {
-    public class Porduto
+    public class Produto
     {
         {
         public int Id { get; set; }
