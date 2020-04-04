@@ -8,9 +8,19 @@ namespace Quickbuy_Udemy.Dominio.Entity
 {
     public class Pedido:Entity
     {
+
+        //log do add-migration 
+        //'formaDePagamento' on entity type 'Pedido'
+        //   problema                      onde esta
         public int Id { get; set; }
         public DateTime DataPedido { get; set; }
         public int UsuarioId { get; set; }
+        /// <summary>
+        /// virtual Usuario Usuario mapea o id do usuario da classe usuario
+        /// se segui o exemplo do UsuarioId ,juncoes em maisusculo Usuario + Id
+        /// o entityframework separa os dois com a virtual
+        /// </summary>
+        public virtual Usuario Usuario { get; set; }
         public DateTime PrevisaoDeEntrega { get; set; }
         public string Cep { get; set; }
         public string Estado { get; set; }
@@ -18,10 +28,13 @@ namespace Quickbuy_Udemy.Dominio.Entity
         public string EnderecoCompleto { get; set; }
         public int NumeroDoEndereco { get; set; }
         public int FormaPagamentoId { get; set; }
-        public FormaPagamento formaDePagamento { get; set; }
+        public virtual FormaPagamento formaDePagamento { get; set; }
 
+        /// <summary>
+        /// virtual para ser alimentada na base em tempo de exucatao
+        /// </summary>
 
-        public ICollection<ItemPedido> ItensPedido { get; set; }
+        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
 
         public override void Validate()
         {

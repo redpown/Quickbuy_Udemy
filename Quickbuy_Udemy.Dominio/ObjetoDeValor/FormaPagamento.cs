@@ -11,23 +11,30 @@ namespace Quickbuy_Udemy.Dominio.ObjetoDeValor
         public string Nome { get; set; }
         public string Descricao { get; set; }
 
-        public bool IsBoleto {
+        public  bool IsBoleto {
             get { return Id == (int)TipoFormaPagamentoEnum.Boleto; }
+            // usar set vazio
+            set { }
+            
+
         }
 
         public bool IsCartaoDeCredito
         {
             get { return Id == (int)TipoFormaPagamentoEnum.CartaoDeCredito; }
+            set { }
         }
 
         public bool IsDeposito
         {
             get { return Id == (int)TipoFormaPagamentoEnum.Deposito; }
+            set { }
         }
 
         public bool IsNaoDefinido
         {
             get { return Id == (int)TipoFormaPagamentoEnum.NaoDefinido; }
+            set { }
         }
     }
 }

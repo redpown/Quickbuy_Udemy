@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Quickbuy_Udemy.Repositorio.Contexto;
 
 
+
 namespace Quickbuy_Udemy.web
 {
     public class Startup
@@ -30,12 +31,19 @@ namespace Quickbuy_Udemy.web
         public void ConfigureServices(IServiceCollection services)
         {
             //andre
-            //criar a string de conexao
-            var connectionString = Configuration.GetConnectionString("postgres");
-            //adciona a classe de quickdbentity
+            //criar a string de conexao dentro do json
+            //abra e use como exmpla,obs, ele esta para postgres
+            var connectionString = Configuration.GetConnectionString("QuickBuy_Udemy_DB");//craido no json dentro da ConnectionStrings -> QuickBuy_Udemy_DB
+            //adciona a classe de QuickyBuy_Udemy_DB_Entity
             //se nao aparecer btn direito em cima de dependencias-> adcionar depencias
-            services.AddDbContext<QuickyBuy_Udemy_DB_Entity>(option => option.UseNpgsql(connectionString, m => m.MigrationsAssembly("Quickbuy_Udemy.Repositorio")));
-           
+            //ao usar o entityframework usar tb .UseLazyLoadingProxies()
+            services.AddDbContext<QuickyBuy_Udemy_DB_Entity>(option => option
+                                                                       .UseLazyLoadingProxies()
+                                                                       .UseNpgsql(connectionString, 
+                                                                                  m => m.MigrationsAssembly("Quickbuy_Udemy.Repositorio")));//caminho ou projeto onde sera gerado 
+                                                                                                                                            //adicionar e remover o projeto de inicailizacao caso der erro doesn't match your migrations assembly
+                                                                                                                                            //o codigo para criar ou atualixar o banco de dados
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

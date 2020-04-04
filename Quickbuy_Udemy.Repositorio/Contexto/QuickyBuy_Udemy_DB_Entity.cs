@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Quickbuy_Udemy.Repositorio.Config;
 using Quickbuy_Udemy.Dominio.Entity;
 using Quickbuy_Udemy.Dominio.ObjetoDeValor;
 using System;
@@ -18,6 +19,16 @@ namespace Quickbuy_Udemy.Repositorio.Contexto
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<ItemPedido> ItemPedidos { get; set; }
         public DbSet<FormaPagamento> FormaPagamentos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            //classes de mapeamento aqui..
+            //que sao as classes criadas na pasta Config...
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new PedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemPedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+        }
 
     }
 }

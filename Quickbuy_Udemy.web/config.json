@@ -1,10 +1,13 @@
 {
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
-  ]
+  "ConnectionStrings": {
+    "QuickBuy_Udemy_DB":"Server=127.0.0.1;Port=5432;Database=andre;User;Id=postgres;Password=jjaerp;"
+  }
 }
+/*{
+  "Server": "127.0.0.1",
+  "Port": "5432",
+  "Database": "andre",
+  "Id": "postgres",
+  "Password":"jjaerp"
+}*/
+/*va em propriedade e coloca para copiar sempre*/
