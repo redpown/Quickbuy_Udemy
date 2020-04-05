@@ -20,37 +20,37 @@ namespace Quickbuy_Udemy.Repositorio.Config
                 .Property(tabelaPedido => tabelaPedido.Cep)
                 .IsRequired()
                 .HasMaxLength(50)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             builder
                .Property(tabelaPedido => tabelaPedido.Cep)
                .IsRequired()
                .HasMaxLength(50)
-               .HasColumnType("nvarhcar");
+               .HasColumnType("varchar ");
             builder
                 .Property(tabelaPedido => tabelaPedido.Cidade)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             builder
                 .Property(tabelaPedido => tabelaPedido.DataPedido)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             builder
                .Property(tabelaPedido => tabelaPedido.EnderecoCompleto)
                .IsRequired()
                .HasMaxLength(256)
-               .HasColumnType("nvarhcar");
+               .HasColumnType("varchar ");
             builder
                .Property(tabelaPedido => tabelaPedido.Estado)
                .IsRequired()
                .HasMaxLength(256)
-               .HasColumnType("nvarhcar");
+               .HasColumnType("varchar ");
             builder
               .Property(tabelaPedido => tabelaPedido.PrevisaoDeEntrega)
               .IsRequired()
               .HasMaxLength(256)
-              .HasColumnType("nvarhcar");
+              .HasColumnType("varchar ");
             //chave estrangeira
             builder
                .HasOne(tabelaPedido => tabelaPedido.Usuario);

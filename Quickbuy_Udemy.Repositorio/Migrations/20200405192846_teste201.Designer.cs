@@ -11,8 +11,8 @@ using Quickbuy_Udemy.Repositorio.Contexto;
 namespace Quickbuy_Udemy.Repositorio.Migrations
 {
     [DbContext(typeof(QuickyBuy_Udemy_DB_Entity))]
-    [Migration("20200404212914_migracao01")]
-    partial class migracao01
+    [Migration("20200405192846_teste201")]
+    partial class teste201
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,26 +59,26 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
 
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(50);
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<DateTime>("DataPedido")
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<string>("EnderecoCompleto")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<int>("FormaPagamentoId")
@@ -88,7 +88,7 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("PrevisaoDeEntrega")
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<int>("UsuarioId")
@@ -115,12 +115,12 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(50);
 
                     b.Property<decimal>("Preco")
@@ -143,22 +143,22 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(50);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(400);
 
                     b.Property<string>("Sobrenome")
                         .IsRequired()
-                        .HasColumnType("nvarhcar")
+                        .HasColumnType("varchar ")
                         .HasMaxLength(256);
 
                     b.Property<List<string>>("_mensagensValidacao")

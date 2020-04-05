@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Quickbuy_Udemy.Repositorio.Contexto;
@@ -10,9 +11,10 @@ using Quickbuy_Udemy.Repositorio.Contexto;
 namespace Quickbuy_Udemy.Repositorio.Migrations
 {
     [DbContext(typeof(QuickyBuy_Udemy_DB_Entity))]
-    partial class QuickyBuy_Udemy_DB_EntityModelSnapshot : ModelSnapshot
+    [Migration("20200405195247_carga202")]
+    partial class carga202
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

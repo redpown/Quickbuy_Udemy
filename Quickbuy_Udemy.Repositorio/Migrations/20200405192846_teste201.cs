@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Quickbuy_Udemy.Repositorio.Migrations
 {
-    public partial class migracao01 : Migration
+    public partial class teste201 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,8 +34,8 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     _mensagensValidacao = table.Column<List<string>>(nullable: true),
-                    Nome = table.Column<string>(type: "nvarhcar", maxLength: 50, nullable: false),
-                    Descricao = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false),
+                    Nome = table.Column<string>(type: "varchar ", maxLength: 50, nullable: false),
+                    Descricao = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false),
                     Preco = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
@@ -50,10 +50,10 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     _mensagensValidacao = table.Column<List<string>>(nullable: true),
-                    Email = table.Column<string>(type: "nvarhcar", maxLength: 50, nullable: false),
-                    Senha = table.Column<string>(type: "nvarhcar", maxLength: 400, nullable: false),
-                    Nome = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false),
-                    Sobrenome = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false)
+                    Email = table.Column<string>(type: "varchar ", maxLength: 50, nullable: false),
+                    Senha = table.Column<string>(type: "varchar ", maxLength: 400, nullable: false),
+                    Nome = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false),
+                    Sobrenome = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,13 +67,13 @@ namespace Quickbuy_Udemy.Repositorio.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     _mensagensValidacao = table.Column<List<string>>(nullable: true),
-                    DataPedido = table.Column<DateTime>(type: "nvarhcar", maxLength: 256, nullable: false),
+                    DataPedido = table.Column<DateTime>(type: "varchar ", maxLength: 256, nullable: false),
                     UsuarioId = table.Column<int>(nullable: false),
-                    PrevisaoDeEntrega = table.Column<DateTime>(type: "nvarhcar", maxLength: 256, nullable: false),
-                    Cep = table.Column<string>(type: "nvarhcar", maxLength: 50, nullable: false),
-                    Estado = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false),
-                    Cidade = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false),
-                    EnderecoCompleto = table.Column<string>(type: "nvarhcar", maxLength: 256, nullable: false),
+                    PrevisaoDeEntrega = table.Column<DateTime>(type: "varchar ", maxLength: 256, nullable: false),
+                    Cep = table.Column<string>(type: "varchar ", maxLength: 50, nullable: false),
+                    Estado = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false),
+                    Cidade = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false),
+                    EnderecoCompleto = table.Column<string>(type: "varchar ", maxLength: 256, nullable: false),
                     NumeroDoEndereco = table.Column<int>(nullable: false),
                     FormaPagamentoId = table.Column<int>(nullable: false)
                 },

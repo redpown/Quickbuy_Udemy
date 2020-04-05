@@ -20,7 +20,7 @@ namespace Quickbuy_Udemy.Repositorio.Config
                 .Property(tabelaProduto => tabelaProduto.Nome)
                 .IsRequired()
                 .HasMaxLength(50)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             builder
                 .Property(tabelaProduto => tabelaProduto.Preco)
                 .IsRequired();
@@ -28,7 +28,7 @@ namespace Quickbuy_Udemy.Repositorio.Config
                 .Property(tabelaProduto => tabelaProduto.Descricao)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
 
            
         }

@@ -18,23 +18,23 @@ namespace Quickbuy_Udemy.Repositorio.Config
             builder.Property(tabelaUsuario => tabelaUsuario.Email)
                 .IsRequired()
                 .HasMaxLength(50)
-                .HasColumnType("nvarhcar"); 
+                .HasColumnType("varchar "); 
             builder.Property(tabelaUsuario => tabelaUsuario.Senha)
                 .IsRequired()
                 .HasMaxLength(400)
-                .HasColumnType("nvarhcar"); 
+                .HasColumnType("varchar "); 
             builder.Property(tabelaUsuario => tabelaUsuario.Nome)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             builder.Property(tabelaUsuario => tabelaUsuario.Sobrenome)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");        
+                .HasColumnType("varchar ");        
             builder.Property(tabelaUsuario => tabelaUsuario.Sobrenome)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("nvarhcar");
+                .HasColumnType("varchar ");
             ///aqui e feito o relacionamento da chave estrangeira
             builder
                 .HasMany(tabelaUsuario => tabelaUsuario.Pedidos)

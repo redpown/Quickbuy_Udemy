@@ -2,3 +2,18 @@ Build succeeded.
 Your target project 'Quickbuy_Udemy.web' doesn't match your migrations assembly 'Quickbuy_Udemy.repositorio'. Either change your target project or change your migrations assembly.
 Change your migrations assembly by using DbContextOptionsBuilder. E.g. options.UseSqlServer(connection, b => b.MigrationsAssembly("Quickbuy_Udemy.web")). By default, the migrations assembly is the assembly containing the DbContext.
 Change your target project to the migrations project by using the Package Manager Console's Default project drop-down list, or by executing "dotnet ef" from the directory containing the migrations project.
+
+no gerenciador de pacotes
+colocar a aplicacao web como projeto inicial
+depois
+
+executar 
+Add-Migration NewMigration -Project MyApp.Migrations onde
+              nomedoarquivo gerado  projeto com assembly
+
+assim ele pode executar com aplicaçao web como projeto inicial
+
+para atualizr a base 
+rodar o:
+Update-Database
+ 

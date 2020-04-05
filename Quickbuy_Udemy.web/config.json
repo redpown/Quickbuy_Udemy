@@ -1,8 +1,11 @@
 {
   "ConnectionStrings": {
-    "QuickBuy_Udemy_DB":"Server=127.0.0.1;Port=5432;Database=andre;User;Id=postgres;Password=jjaerp;"
+    "QuickBuy_Udemy_DB": "Server=127.0.0.1;Port=5432;Database=QuickBuy_Udemy_DB;User Id=postgres;Password=jjaerp;"
   }
 }
+/*
+  o nome colocado em databes ele ira criar se não existir
+*/
 /*{
   "Server": "127.0.0.1",
   "Port": "5432",
