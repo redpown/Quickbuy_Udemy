@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Quickbuy_Udemy.Dominio.Contract;
 using Quickbuy_Udemy.Repositorio.Contexto;
-
-
+using Quickbuy_Udemy.Repositorio.Repositorios;
 
 namespace Quickbuy_Udemy.web
 {
@@ -43,6 +43,8 @@ namespace Quickbuy_Udemy.web
                                                                                   m => m.MigrationsAssembly("Quickbuy_Udemy.Repositorio")));//caminho ou projeto onde sera gerado 
                                                                                                                                             //adicionar e remover o projeto de inicailizacao caso der erro doesn't match your migrations assembly
                                                                                                                                             //o codigo para criar ou atualixar o banco de dados
+            //ele adciona as referencias dentro do angular e faz instancia
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

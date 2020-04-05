@@ -10,11 +10,11 @@ namespace Quickbuy_Udemy.Repositorio
     {
         public Cliente() {
             // so funciona no metodo construtor
-            var usuarioRepositorio = new UsuarioRepositorio();
+           /* var usuarioRepositorio = new UsuarioRepositorio();
             var produto = new Produto();
             var usuario = new Usuario();
             //usuarioRepositorio.Adcionar(produto);//pelo modelo de criacao ele não aceita outro tipo de classe
-            usuarioRepositorio.Adcionar(usuario);
+            usuarioRepositorio.Adcionar(usuario);*/
         }  
     }
 }
