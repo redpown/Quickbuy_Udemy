@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Usuarios } from "../../modelo/Usuarios";
+import { Router, ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -9,13 +10,16 @@ import { Usuarios } from "../../modelo/Usuarios";
 })
 //acho q a versao 6 do angular cli nao aceita
 //export class ProdutoComponent extends Component {
-export class LoginComponent {
+//tudo que precisa ser inicializado usar a clase OnInit
+export class LoginComponent implements OnInit {
   public usuarios;
   public usuariologado: boolean;
 
-  constructor() {
-    this.usuarios = new Usuarios();
+  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
+  
   }
+
+  public returnUrl: string;
 
   public ano: Number = new Date().getFullYear();
   //referenciando atributos no html
@@ -40,15 +44,21 @@ export class LoginComponent {
     //return this.nome;
     return "Samsung";
   }
+  //ngOnInit vem da clase OnInit
+  ngOnInit(): void {
+    this.usuarios = new Usuarios();
+    this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'];
+  }
 
   login() {
-   /* if (this.usuarios.email != "" && this.usuarios.senha != "") {
-      this.usuariologado = true;
-    } else {
-      this.usuariologado = false;
-    }*/
+    if (this.usuarios.email != "" && this.usuarios.senha != "") {
+      sessionStorage.setItem("usuario-autenticado", "1");
+      this.router.navigate([this.returnUrl]);
+    } //else {
+     // this.usuariologado = false;
+   // }
 
-     alert(this.usuarios.email + this.usuarios.senha);
+    // alert(this.usuarios.email + this.usuarios.senha);
   }
 
 }

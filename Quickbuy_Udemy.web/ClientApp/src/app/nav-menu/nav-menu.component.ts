@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav-menu',/* aqui e a tag html do component*/
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+  constructor(private router: Router) { }
   isExpanded = false;
 
   collapse() {
@@ -14,5 +15,13 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  public usuarioLogado(): boolean {
+    return sessionStorage.getItem("usuario-autenticado") == "1";
+  }
+  sair() {
+    sessionStorage.setItem("usuario-autenticado", "");
+    this.router.navigate(['/']);
   }
 }

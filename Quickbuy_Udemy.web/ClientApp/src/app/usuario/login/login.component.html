@@ -7,7 +7,14 @@
           <div class="form-group">
             <label class="label">Usuário</label>
             <div class="input-group">      <!-- [(ngModel)]="usuarios.email" variavel do backend angular  mais a frente   criei uma variavel de templete #nomedavariavel-->
-              <input type="text" class="form-control" placeholder="Usuário" [(ngModel)]="usuarios.email" #email="ngModel" required email/>
+              <input type="text" class="form-control" placeholder="Usuário"
+                     [(ngModel)]="usuarios.email"
+                     #email="ngModel"
+                     [ngClass]="{
+                                  'is-invalid':email.invalid &&(email.dirty || email.touched),
+                                   'is-valid':email.valid &&(email.dirty || email.touched)
+                     }"
+                     required email/>
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="fa fa-user-o"></i>
@@ -15,7 +22,7 @@
               </div>
 
             </div>
-            <div classs="input-group alert alert-danger" *ngIf="email.invalid &&(email.dirty || email.touched)" role="alert">
+            <div classs="invalid-feedback" *ngIf="email.invalid &&(email.dirty || email.touched)" role="alert">
               <div *ngIf="email.errors.required">
                 este campo deve ser prenchido
               </div>
