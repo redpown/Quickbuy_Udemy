@@ -34,7 +34,7 @@ namespace Quickbuy_Udemy.Repositorio.Config
             builder.Property(tabelaUsuario => tabelaUsuario.Sobrenome)
                 .IsRequired()
                 .HasMaxLength(256)
-                .HasColumnType("varchar ");
+                .HasColumnType("varchar  ");
             ///aqui e feito o relacionamento da chave estrangeira
             builder
                 .HasMany(tabelaUsuario => tabelaUsuario.Pedidos)

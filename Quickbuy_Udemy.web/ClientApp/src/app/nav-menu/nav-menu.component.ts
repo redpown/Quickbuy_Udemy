@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nav-menu',
+  selector: 'app-nav-menu',/* aqui e a tag html do component*/
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
 })

@@ -36,7 +36,7 @@ namespace Quickbuy_Udemy.web.Controllers
             {
                 _IProdutoRepositorio.Adicionar(produto);
                 //return Created("api/produto",produto);
-                return Created("/produto", produto);
+                return Created("api/produto", produto);
             }
             catch (Exception Ex)
             {
