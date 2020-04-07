@@ -15,7 +15,7 @@ namespace Quickbuy_Udemy.Dominio.Entity
             get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>());  }//?? verifica se esta vazio
         }
         public abstract void Validate();
-        protected bool IsValiado { get { return MensagemValidacao.Any(); } }
+        protected bool IsValidado { get { return MensagemValidacao.Any(); } }
         protected void LimparmensagemDeValidacao() {
             MensagemValidacao.Clear();
         }

@@ -23,6 +23,7 @@ namespace Quickbuy_Udemy.Repositorio.Config
             builder
                 .Property(tabelaFormaPagamento => tabelaFormaPagamento.Descricao)
                 .IsRequired();
+            /*
             //acho q daqui para baixo nao devia ser gerado
             builder
                 .Property(tabelaFormaPagamento => tabelaFormaPagamento.IsBoleto)
@@ -40,6 +41,7 @@ namespace Quickbuy_Udemy.Repositorio.Config
                 .Property(tabelaFormaPagamento => tabelaFormaPagamento.IsNaoDefinido)
                 .IsRequired()
                 .HasColumnType("boolean");
+                */
         }
     
     }

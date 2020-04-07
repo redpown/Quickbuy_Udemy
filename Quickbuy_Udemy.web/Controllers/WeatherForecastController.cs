@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace Quickbuy_Udemy.web.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")]//aqui diz que vou pegar o nome do arquivo sem o Controller
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

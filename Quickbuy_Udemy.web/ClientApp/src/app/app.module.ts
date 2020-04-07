@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { LoginComponent } from './usuario/login/login.component';
 import { GuardaRotas } from './autorizacao/guarda.rotas';
+import { UsuariosServicos } from './servicos/usuarios/usuarios.servicos';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { GuardaRotas } from './autorizacao/guarda.rotas';
       { path: 'login', component: LoginComponent  },
     ])
   ],
-  providers: [],
+  providers: [UsuariosServicos],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,6 +45,7 @@ namespace Quickbuy_Udemy.web
                                                                                                                                             //o codigo para criar ou atualixar o banco de dados
             //ele adciona as referencias dentro do angular e faz instancia
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
@@ -81,7 +82,7 @@ namespace Quickbuy_Udemy.web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action=Index}/{id?}");//aqui diz que vou pegar o nome do arquivo sem o Controller
             });
 
             app.UseSpa(spa =>

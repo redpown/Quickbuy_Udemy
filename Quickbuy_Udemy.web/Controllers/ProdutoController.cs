@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Quickbuy_Udemy.web.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProdutoController : ControllerBase
     {
         private readonly IProdutoRepositorio _IProdutoRepositorio;

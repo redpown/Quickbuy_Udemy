@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Usuarios } from "../../modelo/Usuarios";
 import { Router, ActivatedRoute } from "@angular/router";
+import { UsuariosServicos } from "../../servicos/usuarios/usuarios.servicos";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   public usuarios;
   public usuariologado: boolean;
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private usuariosservicos:UsuariosServicos) {
   
   }
 
@@ -51,10 +52,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.usuariosservicos.verificaUsuario(this.usuarios)
+      .subscribe(
+      data => {
+      },
+        err => {
+        }
+    );
+  /*
     if (this.usuarios.email != "" && this.usuarios.senha != "") {
       sessionStorage.setItem("usuario-autenticado", "1");
       this.router.navigate([this.returnUrl]);
-    } //else {
+    }*/ //else {
      // this.usuariologado = false;
    // }
 
