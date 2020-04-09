@@ -47,7 +47,7 @@ namespace Quickbuy_Udemy.web.Controllers
             }
         }
         [HttpPost("verificausuario")]//em parenteses esta o caminho 
-        public ActionResult VerificarUsuario([FromBody]Usuario usuario)
+        public ActionResult VerificarUsuario([FromBody]Usuario usuario)//converte a classe usuario em json
         {
             try
             {

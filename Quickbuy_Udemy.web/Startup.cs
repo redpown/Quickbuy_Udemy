@@ -44,6 +44,7 @@ namespace Quickbuy_Udemy.web
                                                                                                                                             //adicionar e remover o projeto de inicailizacao caso der erro doesn't match your migrations assembly
                                                                                                                                             //o codigo para criar ou atualixar o banco de dados
             //ele adciona as referencias dentro do angular e faz instancia
+            //para implemetar a clase implemetada inface impremente classe
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 

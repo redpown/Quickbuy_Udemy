@@ -54,15 +54,18 @@ export class LoginComponent implements OnInit {
   login() {
     this.usuariosservicos.verificaUsuario(this.usuarios)
       .subscribe(
-      data => {
+        usuario_json => {
+          console.log(usuario_json);
+          this.usuariosservicos.usuario = usuario_json;
       },
         err => {
+          console.log(err.error);
         }
     );
   /*
     if (this.usuarios.email != "" && this.usuarios.senha != "") {
       sessionStorage.setItem("usuario-autenticado", "1");
-      this.router.navigate([this.returnUrl]);
+      this.router.navigate([this.returnUrl]);//redireciona para alguma pagina
     }*/ //else {
      // this.usuariologado = false;
    // }

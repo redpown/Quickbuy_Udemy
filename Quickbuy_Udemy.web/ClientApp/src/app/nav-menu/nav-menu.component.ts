@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosServicos } from '../servicos/usuarios/usuarios.servicos';
 @Component({
   selector: 'app-nav-menu',/* aqui e a tag html do component*/
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usariosservicos:UsuariosServicos) { }
   isExpanded = false;
 
   collapse() {
@@ -21,7 +22,8 @@ export class NavMenuComponent {
     return sessionStorage.getItem("usuario-autenticado") == "1";
   }
   sair() {
-    sessionStorage.setItem("usuario-autenticado", "");
+    this.usariosservicos.limpar_session();
+    //sessionStorage.setItem("usuario-autenticado", "");
     this.router.navigate(['/']);
   }
 }
