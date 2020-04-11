@@ -14,14 +14,28 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+/*
+@Component({
+
+  selector : "produto",
+  template: "./produto.component.html",
+  styleUrls: ['./produto.component.css']
+})
+
+*/
+/* aqui e a tag html do component*/
+//acho q a versao 6 do angular cli nao aceita
+//export class ProdutoComponent extends Component {
 var ProdutoComponent = /** @class */ (function (_super) {
     __extends(ProdutoComponent, _super);
     function ProdutoComponent() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.selector = "produto";
-        _this.template = "<html><body>{{ obterNome() }}</body></html>";
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
+    ProdutoComponent.prototype.ngOnInit = function () {
+        this.selector = "produto";
+        this.template = "./produto.component.html";
+        this.styleUrls = ['./produto.component.css'];
+    };
     ProdutoComponent.prototype.obterNome = function () {
         //return this.nome;
         return "Samsung";

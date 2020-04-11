@@ -27,9 +27,9 @@ import { UsuariosServicos } from './servicos/usuarios/usuarios.servicos';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent, canActivate: [GuardaRotas]  },
       { path: 'produto', component: ProdutoComponent, canActivate:[GuardaRotas] },
-      { path: '', component: LoginComponent  },
+      { path: '', component: LoginComponent, pathMatch: 'full'  },
     ])
   ],
   providers: [UsuariosServicos],

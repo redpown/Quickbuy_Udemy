@@ -58,12 +58,14 @@ export class LoginComponent implements OnInit {
           console.log(usuario_json);
           this.usuariosservicos.usuario = usuario_json;
           if (this.returnUrl == null) {
+            sessionStorage.setItem("usuario-autenticado", "1");
             this.router.navigate(['home']);
           } else {
             this.router.navigate([this.returnUrl]);
           }
       },
         err => {
+          sessionStorage.setItem("usuario-autenticado", "");
           console.log(err.error);
         }
     );
