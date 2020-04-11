@@ -1,3 +1,4 @@
+/*
 .margin-top-2 {
     margin-top: 2%;
 }
@@ -21,8 +22,8 @@
     color: #ffffff;
     text-align: center;
     white-space: nowrap;
-    /* background-color: #e9ecef; */
-    /* border: 1px solid #ced4da; */
+     background-color: #e9ecef; 
+     border: 1px solid #ced4da; 
     border-radius: 2px;
 }
 .center-text{
@@ -47,23 +48,23 @@
     border: solid 2px cadetblue;
 
 }
-/*
+
 usado para esconder os controles html gerado pelo delphi
 pois seu codigo gerado atrapalha o layout do template
-*/
+
 .controles-delphi{
 	display:none;
 }
 
-/*
-quando clicar no caixa o menu lateral some*/
+
+quando clicar no caixa o menu lateral some
 .esconder{
 	display:none;
 }
 .caixa {
     width: 100%;
 }
-/* esconder botoes de categorias para celular*/
+ esconder botoes de categorias para celular
 .esconder-botoes{
     display:none;
 }
@@ -111,7 +112,7 @@ quando clicar no caixa o menu lateral some*/
 	background: bisque;
 }
 
-/*tabelas de vendas personalizadas*/ 
+tabelas de vendas personalizadas
 .table.table-striped tbody tr:nth-child(odd) {
     background: rgba(0, 125, 255, 0.39);
 }
@@ -135,7 +136,7 @@ quando clicar no caixa o menu lateral some*/
 .table  thead  tr  th:nth-child(odd){
 	 border-color: #dee2e6;
 }
-/* fim */
+ fim 
 
 @media (max-width: 700px) { 
 .table td, .table th {
@@ -176,7 +177,8 @@ quando clicar no caixa o menu lateral some*/
 	height: 100%;
 }
 
-/* validacao correcao*/
+validacao correcao
+
 .form-control-feedback {
     position: absolute;
     top: 0;
@@ -190,3 +192,4 @@ quando clicar no caixa o menu lateral some*/
     pointer-events: none;
 	right: 15px;
 }
+*/

@@ -7,5 +7,7 @@ namespace Quickbuy_Udemy.Dominio.Contract
 {
     public interface IUsuarioRepositorio : IBaseRepositorio<Usuario>
     {
+        public Usuario Obter(string email, string senha);
+        public Usuario Obter(string email);
     }
 }

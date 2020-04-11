@@ -1,2 +1,11 @@
 body {
 }
+.jpdv-icon-default {
+  background-color: #1b6ec2;
+  color: white;
+}
+ 
+.jpdv-danger {
+  color: red;
+  text-align: center;
+}

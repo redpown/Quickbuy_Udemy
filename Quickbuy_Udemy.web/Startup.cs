@@ -83,7 +83,7 @@ namespace Quickbuy_Udemy.web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");//aqui diz que vou pegar o nome do arquivo sem o Controller
+                    pattern: "api/{controller}/{action=Index}/{id?}");//aqui diz que vou pegar o nome do arquivo sem o Controller
             });
 
             app.UseSpa(spa =>

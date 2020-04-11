@@ -48,15 +48,20 @@ export class LoginComponent implements OnInit {
   //ngOnInit vem da clase OnInit
   ngOnInit(): void {
     this.usuarios = new Usuarios();
-    this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'];
+    this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'];//guarda a rota atual
   }
-
+  //faco o get do atrbuto no template pelo  [(ngModel)] = "usuarios.email"
   login() {
     this.usuariosservicos.verificaUsuario(this.usuarios)
       .subscribe(
         usuario_json => {
           console.log(usuario_json);
           this.usuariosservicos.usuario = usuario_json;
+          if (this.returnUrl == null) {
+            this.router.navigate(['home']);
+          } else {
+            this.router.navigate([this.returnUrl]);
+          }
       },
         err => {
           console.log(err.error);

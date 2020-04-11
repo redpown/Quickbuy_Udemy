@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Quickbuy_Udemy.web.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]")]//aqui dou o nome do caminho mais a classe de controle //ele faz um substring da scrita controle
     public class UsuariosController: ControllerBase
     {
         private readonly IUsuarioRepositorio _IUsuarioRepositorio;
@@ -32,34 +32,46 @@ namespace Quickbuy_Udemy.web.Controllers
                 return BadRequest(Ex.ToString());
             }
         }
-        [HttpPost]
-        public ActionResult Post([FromBody]Usuario usuario)
+
+
+        [HttpPost("VerificarUsuario")]//o nome do caminho deve ser identico ao do ActionResult funcao
+        public ActionResult VerificarUsuario([FromBody] Usuario usuario)
         {
             try
             {
-                _IUsuarioRepositorio.Adicionar(usuario);
-                //return Created("api/produto",produto);
-                return Created("api/usuarios", usuario);
+                var usuarioRetorno = _IUsuarioRepositorio.Obter(usuario.Email, usuario.Senha);
+
+                if (usuarioRetorno != null)
+                    return Ok(usuarioRetorno);
+
+                return BadRequest("Usuário ou senha inválido");
+
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                return BadRequest(Ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
-        [HttpPost("verificausuario")]//em parenteses esta o caminho 
-        public ActionResult VerificarUsuario([FromBody]Usuario usuario)//converte a classe usuario em json
+
+        [HttpPost]
+        public ActionResult Post([FromBody] Usuario usuario)
         {
             try
             {
-                if (usuario.Email != "" || usuario.Senha != "") {
-                    return Ok(usuario);
-                } else {
-                    return BadRequest("Usuário ou senha inválido!.");
-                }
+                var usuarioCadastrado = _IUsuarioRepositorio.Obter(usuario.Email);
+
+                if (usuarioCadastrado != null)
+                    return BadRequest("Usuario já cadastrado no sistema");
+
+                //usuario.EhAdministrador = true;
+                _IUsuarioRepositorio.Adicionar(usuario);
+
+                return Ok();
+
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                return BadRequest(Ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

@@ -48,6 +48,6 @@ export class UsuariosServicos {
 
     var body = { email: usuarios.email, senha: usuarios.senha }
 
-    return this.http.post<Usuarios>(this.baseURL + "api/usuarios/verificausuario", body, { headers })
+    return this.http.post<Usuarios>(this.baseURL + "api/usuarios/VerificarUsuario", body, { headers })
   }
 }

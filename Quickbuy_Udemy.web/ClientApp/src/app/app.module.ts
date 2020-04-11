@@ -19,8 +19,6 @@ import { UsuariosServicos } from './servicos/usuarios/usuarios.servicos';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     ProdutoComponent,  /*usar o ts produto criado aqui*/
     LoginComponent
   ],
@@ -29,11 +27,9 @@ import { UsuariosServicos } from './servicos/usuarios/usuarios.servicos';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'produto', component: ProdutoComponent, canActivate:[GuardaRotas] },
-      { path: 'login', component: LoginComponent  },
+      { path: '', component: LoginComponent  },
     ])
   ],
   providers: [UsuariosServicos],

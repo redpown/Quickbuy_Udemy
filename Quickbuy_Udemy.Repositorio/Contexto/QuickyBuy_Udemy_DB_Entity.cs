@@ -11,15 +11,17 @@ namespace Quickbuy_Udemy.Repositorio.Contexto
 {
     public class QuickyBuy_Udemy_DB_Entity:DbContext
     {
-        public QuickyBuy_Udemy_DB_Entity(DbContextOptions options) : base(options)
-        {
-        }
+  
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<ItemPedido> ItemPedidos { get; set; }
         public DbSet<FormaPagamento> FormaPagamentos { get; set; }
+
+        public QuickyBuy_Udemy_DB_Entity(DbContextOptions options) : base(options)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             //classes de mapeamento aqui..
