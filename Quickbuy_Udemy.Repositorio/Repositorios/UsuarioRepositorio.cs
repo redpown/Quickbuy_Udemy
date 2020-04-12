@@ -17,6 +17,12 @@ namespace Quickbuy_Udemy.Repositorio.Repositorios
 
         public Usuario Obter(string email, string senha)
         {
+            // funcao lambda e usada em lista de dados
+            //sintax uma variavel para o foreach exemplo:
+            // u  
+            //sinal para definir a expresao =>
+            //expressao u.Email == email && u.Senha == senha
+            //que so vai retornar onde for true
             return _quickyBuy_Udemy_DB_Entity.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
 
